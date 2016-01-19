@@ -34,6 +34,9 @@ AngularJS A/B Test Service and Directives for creating declarative and imperativ
  - ab-shown - OPTIONAL: function to call when a variant is shown
  - ab-select (coming soon) - OPTIONAL: will be used to make sticky A/B tests
 
+### Use with tags other than `div`
+E.g. `<li class='ab-test'></li>
+
 ## `<ab-variant>` Directive
 ### Properties
  - ab-control - OPTIONAL: specify a variant as the A/B test "control"

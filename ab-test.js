@@ -1,8 +1,9 @@
 /*
  * @license
- * ab-test v0.0.1
+ * ab-test v0.0.2
  * (c) 2014 Daniel Lamb http://daniellmb.com
  * License: MIT
+ * Additions by Conrad Steenberg <conrad@dstld.la>
  */
 
 // shortcut to include both the a/b test service and directive modules
@@ -89,10 +90,7 @@ angular.module('ab.test.directive', ['ab.test.service', 'ngAnimate'])
 // ab-test directive
 .directive('abTest', ['abTestLink', function abTest(abTestLink) {
   return {
-    restrict: 'EA',
-    replace: true,
-    transclude: true,
-    template: '<div ng-transclude></div>',
+    restrict: 'EAC',
     controller: 'abTestCtrl',
     scope: {
       // (optional) two way binding
@@ -100,10 +98,9 @@ angular.module('ab.test.directive', ['ab.test.service', 'ngAnimate'])
       shown: '=?abShown',
       // (required) two way binding
       frequency: '=abFrequency',
-      select: '=?abSelect'
+      select: '=?abSelect',
     },
     compile: function compile(elm, attrs) {
-
       // a/b test frequency required
       if (!angular.isDefined(attrs.abFrequency)) {
         throw new Error('ab-test: ab-frequency attribute required');
@@ -121,8 +118,8 @@ angular.module('ab.test.directive', ['ab.test.service', 'ngAnimate'])
     var frequency = scope.frequency;
 
     // quick data sanity checks
-    if (isNaN(frequency) || (frequency < 0.0001 || frequency > 1)) {
-      throw new Error('ab-test: test frequency must be a float between 0.0001 and 1');
+    if (isNaN(frequency) || (frequency < 0.0001) || (frequency > 1)) {
+      throw new Error('ab-test: test frequency must be a float between 0.0001 and 1.0');
     }
     if (ctrl.variants.length === 0) {
       throw new Error('ab-test: no variants found for the a/b test');
@@ -137,7 +134,7 @@ angular.module('ab.test.directive', ['ab.test.service', 'ngAnimate'])
 .directive('abVariant', ['abVariantLink', function abVariant(abVariantLink) {
   return {
     require: '^abTest',
-    restrict: 'EA',
+    restrict: 'EAC',
     replace: true,
     transclude: true,
     template: '<div ng-transclude ng-show="active" class="ng-class:{\'ab-active\':active}; ab-animate"></div>',

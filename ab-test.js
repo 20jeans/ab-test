@@ -1,6 +1,6 @@
 /*
  * @license
- * ab-test v0.0.2
+ * ab-test v0.0.3
  * (c) 2014 Daniel Lamb http://daniellmb.com
  * License: MIT
  * Additions by Conrad Steenberg <conrad@dstld.la>

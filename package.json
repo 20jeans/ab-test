@@ -1,6 +1,6 @@
 {
   "name": "ab-test",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "AngularJS A/B Test Service and Directives for creating declarative and imperative A/B/n tests.",
   "keywords": [
     "angularjs",
@@ -8,12 +8,12 @@
     "service",
     "directive"
   ],
-  "homepage": "https://github.com/daniellmb/ab-test",
+  "homepage": "https://github.com/20jeans/ab-test",
   "author": "Daniel Lamb (http://daniellmb.com)",
   "maintainers": [],
   "contributors": [],
   "bugs": {
-    "url": "https://github.com/daniellmb/ab-test/issues"
+    "url": "https://github.com/20jeans/ab-test/issues"
   },
   "licenses": [
     {
@@ -23,7 +23,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/daniellmb/ab-test.git"
+    "url": "git://github.com/20jeans/ab-test.git"
   },
   "main": "ab-test.js",
   "directories": {

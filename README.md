@@ -35,7 +35,7 @@ AngularJS A/B Test Service and Directives for creating declarative and imperativ
  - ab-select (coming soon) - OPTIONAL: will be used to make sticky A/B tests
 
 ### Use with tags other than `div`
-E.g. `<li class='ab-test'></li>
+E.g. `<li class='ab-test'></li>`
 
 ## `<ab-variant>` Directive
 ### Properties
